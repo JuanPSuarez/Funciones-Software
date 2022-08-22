@@ -31,17 +31,45 @@ def lineaPerpendicular(termX, termI):
     return termX, termI
 
 #Funcion para denotar el Comportamiento de la recta:
+
+
+#FUNCIONES ANALISIS RECTA
+
+#Corte con el Eje x.
+
+#Corte con el Eje y.
+
+#Comportamiento de la recta.
+
 def comportamientoRecta(a):
     if a > 0: # A = coeficiente principal
         comportamiento = "Creciente"
     else:
         comportamiento = "Decreciente"
     return comportamiento
-    
+
+#FUNCIONES ANALISIS PARABOLA
+
+#Corte con el Eje x.
+
+#Corte con el Eje y.
+
+#Intervalo de crecimiento y decrecimiento.
+
+#Coordenadas al vertice.
+
+#Concavididad de la parabola.
+
+#Parabola sin solucion.
+
+#Doble multiplicidad.
+
+
 
 #-----------------------------------------------------------------------------
 #Menu Principal
 #-----------------------------------------------------------------------------
+
 OpMenu = int
 while OpMenu != 0:
     OpMenu = int(input("""Ingrese una opcion: 
@@ -51,8 +79,6 @@ while OpMenu != 0:
     0) Salir.
     """))
     
-
-
 #-----------------------------------------------------------------------------
 #1) Recta paralela y Perpendicular a una dada.
 #-----------------------------------------------------------------------------
@@ -67,7 +93,7 @@ while OpMenu != 0:
 
         print("La ecuacion es: " , a, "x +",b)
 
-        #Paralelas.
+#Paralelas.
         contador = 0 #Variable que funciona de contador.
         while contador < 3: #Loop While va a correr 3 veces
             contador += 1
@@ -77,7 +103,7 @@ while OpMenu != 0:
         contador = 1 #Volvemos a setear contador a 1.
         print("\n")
 
-        #Perpendiculares.
+#Perpendiculares.
         while contador < 3:
             contador += 1
             aPerp, bPerp = lineaPerpendicular(a, b)
@@ -91,20 +117,42 @@ while OpMenu != 0:
 #-----------------------------------------------------------------------------
 
 #Input del usuario.
+    if OpMenu == 2:
+        a = 0 #Reusamos codigo de linea 88
+        while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
+            a = int(input("Ingrese el termino de X: "))
+        b = int(input("Ingrese el termino indepndiente: "))
+        print("\n")
 
+        print("La ecuacion es: " , a, "x +",b)
 
+# f(x):ax+b
 
 #Corte con el Eje x.
 
+#Eje y (evaluar la funcion en 0)
+# f(x) = 3x+6
+# f(0) = 3(0)+6
+# f(0) = 6
+# (0,6)
+
 #Corte con el Eje y.
 
+
+
 #Comportamiento de la recta.
+
+        TipoRecta = comportamientoRecta(a)
+        print("El comportamiento de la recta es: ", TipoRecta)
+
 
 #-----------------------------------------------------------------------------
 #3) Analisis de una parabola.
 #-----------------------------------------------------------------------------
 
 #Input del usuario.
+    if OpMenu == 3:
+        pass
 
 #Corte con el Eje x.
 
