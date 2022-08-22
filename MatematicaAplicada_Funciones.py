@@ -38,6 +38,17 @@ def comportamientoRecta(a):
         comportamiento = "Decreciente"
     return comportamiento
 
+#-----------------------------------------------------------------------------
+#Menu Principal
+#-----------------------------------------------------------------------------
+OpMenu = int
+while OpMenu != 0:
+    print ("""Ingrese una opcion: 
+    1) Calcular Paralelas y Perpendicualres a una recta dada.
+    2) Analisis de una ecuacion lineal.
+    3) Analisis de ecuacion cuadratica.
+    """)
+
 
 #-----------------------------------------------------------------------------
 #1) Recta paralela y Perpendicular a una dada.
@@ -76,6 +87,7 @@ print("\n")
 #-----------------------------------------------------------------------------
 
 #Input del usuario.
+
 
 #Corte con el Eje x.
 
