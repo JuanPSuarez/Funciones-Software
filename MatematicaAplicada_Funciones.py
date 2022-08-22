@@ -44,11 +44,13 @@ def comportamientoRecta(a):
 #-----------------------------------------------------------------------------
 OpMenu = int
 while OpMenu != 0:
-    print ("""Ingrese una opcion: 
+    OpMenu = int(input("""Ingrese una opcion: 
     1) Calcular Paralelas y Perpendicualres a una recta dada.
     2) Analisis de una ecuacion lineal.
     3) Analisis de ecuacion cuadratica.
-    """)
+    0) Salir.
+    """))
+    
 
 
 #-----------------------------------------------------------------------------
@@ -56,38 +58,40 @@ while OpMenu != 0:
 #-----------------------------------------------------------------------------
 
 #Input del usuario.
-a = 0
-while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
-    a = int(input("Ingrese el termino de X: "))
-b = int(input("Ingrese el termino indepndiente: "))
-print("\n")
+    if OpMenu == 1:
+        a = 0
+        while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
+            a = int(input("Ingrese el termino de X: "))
+        b = int(input("Ingrese el termino indepndiente: "))
+        print("\n")
 
-print("La ecuacion es: " , a, "x +",b)
+        print("La ecuacion es: " , a, "x +",b)
 
-#Paralelas.
-contador = 0 #Variable que funciona de contador.
-while contador < 3: #Loop While va a correr 3 veces
-    contador += 1
-    bPara = linealParalela(b)
-    print("Su ", contador, "° paralela es: ", a, "x +", bPara)
-    
-contador = 1 #Volvemos a setear contador a 1.
-print("\n")
+        #Paralelas.
+        contador = 0 #Variable que funciona de contador.
+        while contador < 3: #Loop While va a correr 3 veces
+            contador += 1
+            bPara = linealParalela(b)
+            print("Su ", contador, "° paralela es: ", a, "x +", bPara)
+            
+        contador = 1 #Volvemos a setear contador a 1.
+        print("\n")
 
-#Perpendiculares.
-while contador < 3:
-    contador += 1
-    aPerp, bPerp = lineaPerpendicular(a, b)
-    # aPerp = round(aPerp, 2)
-    # aFracc = str(Fraction(aPerp))
-    print ("Su", contador, "° perpendicular es " , aPerp, "x +", bPerp)
-print("\n")
+        #Perpendiculares.
+        while contador < 3:
+            contador += 1
+            aPerp, bPerp = lineaPerpendicular(a, b)
+            # aPerp = round(aPerp, 2)
+            # aFracc = str(Fraction(aPerp))
+            print ("Su", contador, "° perpendicular es " , aPerp, "x +", bPerp)
+        print("\n")
 
 #-----------------------------------------------------------------------------
 #2) Analisis de una recta.
 #-----------------------------------------------------------------------------
 
 #Input del usuario.
+
 
 
 #Corte con el Eje x.
