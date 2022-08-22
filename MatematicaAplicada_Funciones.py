@@ -37,6 +37,7 @@ def comportamientoRecta(a):
     else:
         comportamiento = "Decreciente"
     return comportamiento
+    
 
 #-----------------------------------------------------------------------------
 #Menu Principal
