@@ -1,4 +1,3 @@
-Funciones-Software
 Matemática Aplicada - Funciones -  Software 
 
 Criterios de Evaluación 
