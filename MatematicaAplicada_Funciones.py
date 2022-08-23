@@ -13,7 +13,8 @@
 #https://www.geogebra.org/graphing?lang=en ver para graficar
 
 from fractions import Fraction
-import random
+import math
+import random, time
 
 #-----------------------------------------------------------------------------
 #Funciones
@@ -30,14 +31,35 @@ def lineaPerpendicular(termX, termI):
     termI = random.randint(-100,100) #Termino independiente aleatorio
     return termX, termI
 
-#Funcion para denotar el Comportamiento de la recta:
 
 
 #FUNCIONES ANALISIS RECTA
 
 #Corte con el Eje x.
 
+def corteXlineal (termX, x, termI, y):
+    
+    return
+
+# Eje x (igualar funcion a 0)
+# 3x+6 = 0
+# 3x = -6
+# x=-6/3
+# x=-2
+# (-2,0)
+
 #Corte con el Eje y.
+
+def corteYlineal (termX, termI):
+    x = 0
+    y = termX * (x) + termI
+    return y
+
+#Eje y (evaluar la funcion en 0)
+# f(x) = 3x+6
+# f(0) = 3(0)+6
+# f(0) = 6
+# (0,6)
 
 #Comportamiento de la recta.
 
@@ -47,6 +69,10 @@ def comportamientoRecta(a):
     else:
         comportamiento = "Decreciente"
     return comportamiento
+
+
+
+
 
 #FUNCIONES ANALISIS PARABOLA
 
@@ -126,24 +152,21 @@ while OpMenu != 0:
 
         print("La ecuacion es: " , a, "x +",b)
 
-# f(x):ax+b
 
 #Corte con el Eje x.
 
-#Eje y (evaluar la funcion en 0)
-# f(x) = 3x+6
-# f(0) = 3(0)+6
-# f(0) = 6
-# (0,6)
 
 #Corte con el Eje y.
 
+        ejeY = corteYlineal(a,b)
+        print("Coordenadas ( 0,", ejeY,")")
 
 
 #Comportamiento de la recta.
 
         TipoRecta = comportamientoRecta(a)
         print("El comportamiento de la recta es: ", TipoRecta)
+        time.sleep (2)
 
 
 #-----------------------------------------------------------------------------
