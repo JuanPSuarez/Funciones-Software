@@ -102,7 +102,8 @@ while OpMenu != 0:
     2) Analisis de una ecuacion lineal.
     3) Analisis de ecuacion cuadratica.
     0) Salir.
-    """))
+    \n"""))
+    
     
 #-----------------------------------------------------------------------------
 #1) Recta paralela y Perpendicular a una dada.
@@ -110,13 +111,14 @@ while OpMenu != 0:
 
 #Input del usuario.
     if OpMenu == 1:
+        
         a = 0
         while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
             a = int(input("Ingrese el termino de X: "))
         b = int(input("Ingrese el termino indepndiente: "))
         print("\n")
 
-        print("La ecuacion es: " , a, "x +",b)
+        print("La ecuacion es: " , a, "x +",b, "\n")
 
 #Paralelas.
         contador = 0 #Variable que funciona de contador.
@@ -159,14 +161,14 @@ while OpMenu != 0:
 #Corte con el Eje y.
 
         ejeY = corteYlineal(a,b)
-        print("Coordenadas corte eje 'Y'( 0,", ejeY,")")
+        print("Coordenadas corte eje 'Y': ( 0,", ejeY,")," , "\n")
 
 
 #Comportamiento de la recta.
 
         TipoRecta = comportamientoRecta(a)
-        print("El comportamiento de la recta es: ", TipoRecta)
-        time.sleep (2)
+        print("El comportamiento de la recta es:", TipoRecta, "\n")
+        input("Presione una tecla para continuar.")
 
 
 #-----------------------------------------------------------------------------
@@ -175,7 +177,13 @@ while OpMenu != 0:
 
 #Input del usuario.
     if OpMenu == 3:
-        pass
+        a = 0 #Reusamos codigo de OpMenu == 1
+        while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
+            a = int(input("Ingrese el termino de X: "))
+        b = int(input("Ingrese el termino indepndiente: "))
+        print("\n")
+
+        print("La ecuacion es: " , a, "x +",b)
 
 #Corte con el Eje x.
 
