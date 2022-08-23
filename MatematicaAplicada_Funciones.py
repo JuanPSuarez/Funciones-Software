@@ -13,7 +13,7 @@
 #https://www.geogebra.org/graphing?lang=en ver para graficar
 
 from fractions import Fraction
-import random, time
+import random
 
 #-----------------------------------------------------------------------------
 #Funciones
@@ -40,25 +40,13 @@ def corteXlineal (termX, termI):
     x = -(termI) / termX   #Se iguala funcion a 0.   #Se divide el coeficiente principal por el termino independiente.
     return x 
 
-# Eje x (igualar funcion a 0)
-# 3x+6 = 0
-# 3x = -6
-# x=-6/3
-# x=-2
-# (-2,0)
 
-#Corte con el Eje y.
 
 def corteYlineal (termX, termI):
     x = 0
     y = termX * (x) + termI
     return y
 
-#Eje y (evaluar la funcion en 0)
-# f(x) = 3x+6
-# f(0) = 3(0)+6
-# f(0) = 6
-# (0,6)
 
 #Comportamiento de la recta.
 
@@ -131,6 +119,7 @@ while OpMenu != 0:
         print("\n")
 
 #Perpendiculares.
+        contador = 0
         while contador < 3:
             contador += 1
             aPerp, bPerp = lineaPerpendicular(a, b)
@@ -138,6 +127,7 @@ while OpMenu != 0:
             # aFracc = str(Fraction(aPerp))
             print ("Su", contador, "° perpendicular es " , aPerp, "x +", bPerp)
         print("\n")
+        input("Presione una tecla para continuar.")
 
 #-----------------------------------------------------------------------------
 #2) Analisis de una recta.
