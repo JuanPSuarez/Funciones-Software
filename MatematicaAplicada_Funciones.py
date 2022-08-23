@@ -13,7 +13,6 @@
 #https://www.geogebra.org/graphing?lang=en ver para graficar
 
 from fractions import Fraction
-import math
 import random, time
 
 #-----------------------------------------------------------------------------
@@ -37,9 +36,9 @@ def lineaPerpendicular(termX, termI):
 
 #Corte con el Eje x.
 
-def corteXlineal (termX, x, termI, y):
-    
-    return
+def corteXlineal (termX, termI): 
+    x = -(termI) / termX   #Se iguala funcion a 0.   #Se divide el coeficiente principal por el termino independiente.
+    return x 
 
 # Eje x (igualar funcion a 0)
 # 3x+6 = 0
@@ -144,7 +143,7 @@ while OpMenu != 0:
 
 #Input del usuario.
     if OpMenu == 2:
-        a = 0 #Reusamos codigo de linea 88
+        a = 0 #Reusamos codigo de OpMenu == 1
         while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
             a = int(input("Ingrese el termino de X: "))
         b = int(input("Ingrese el termino indepndiente: "))
@@ -154,12 +153,13 @@ while OpMenu != 0:
 
 
 #Corte con el Eje x.
-
+        ejeX = corteXlineal(a,b)
+        print("Coordenadas corte eje 'X': ", "(",ejeX,", 0 )")
 
 #Corte con el Eje y.
 
         ejeY = corteYlineal(a,b)
-        print("Coordenadas ( 0,", ejeY,")")
+        print("Coordenadas corte eje 'Y'( 0,", ejeY,")")
 
 
 #Comportamiento de la recta.
