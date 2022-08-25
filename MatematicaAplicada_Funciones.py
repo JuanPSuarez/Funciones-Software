@@ -14,6 +14,7 @@
 
 from fractions import Fraction
 import random
+from math import sqrt
 
 #-----------------------------------------------------------------------------
 #Funciones
@@ -56,7 +57,6 @@ def comportamientoRecta(a):
     else:
         comportamiento = "Decreciente"
     return comportamiento
-
 
 
 
@@ -137,8 +137,8 @@ while OpMenu != 0:
     if OpMenu == 2:
         a = 0 #Reusamos codigo de OpMenu == 1
         while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
-            a = int(input("Ingrese el termino de X: "))
-        b = int(input("Ingrese el termino indepndiente: "))
+            a = float(input("Ingrese el termino de X: "))
+        b = float(input("Ingrese el termino indepndiente: "))
         print("\n")
 
         print("La ecuacion es: " , a, "x +",b)
@@ -167,13 +167,48 @@ while OpMenu != 0:
 
 #Input del usuario.
     if OpMenu == 3:
-        a = 0 #Reusamos codigo de OpMenu == 1
-        while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
-            a = int(input("Ingrese el termino de X: "))
-        b = int(input("Ingrese el termino indepndiente: "))
+        a = float(input("Ingrese coeficiente principal: "))
+        b = float(input("Ingrese termino x: "))
+        c = float(input("Ingrese el termino independiente: "))
         print("\n")
 
-        print("La ecuacion es: " , a, "x +",b)
+        print("La ecuacion es: " , a, "x² +",b,"x +", c)
+
+        basc=((b*b)-(4*a*c))
+        ejeSim=-b/(2*a)
+        vertice=((a*(ejeSim*ejeSim))+(b*ejeSim)+(c))
+        xV=ejeSim
+        yV=vertice
+        concPar=""
+        coorVer=(xV,yV)
+        crece=("("+str(xV)+","+ "+∞ "+")")
+        decre=("("+ "-∞"+","+ str(xV)+")")
+        y=c
+
+        if basc > 0:
+            basc1=(-b+sqrt(((b*b)-(4*a*c))))/(2*a)
+            basc2=(-b-sqrt(((b*b)-(4*a*c))))/(2*a)
+            if a > 0:
+                concPar= "Funcion Concava hacia Arriba"
+            if a < 0:
+                concPar= "Funcion Concava hacia Abajo"    
+            print("El valor del discriminante: ", basc)
+            print("La Ecuacion tiene solucion.")
+            print("Corte en Eje x1 = "+str(basc1)) 
+            print("Corte en Eje x2 = "+str(basc2))
+            print("Corte en Eje Y = "+str(y))
+            print("El eje de simetria es= " + str(ejeSim))
+            print("El vertice es= " + str(vertice))
+            print(concPar)
+            print("Las coordenadas del vertice son = " + str(coorVer))
+            print("La parabola crece en: " + str(crece))
+            print("La parabola decrece en: "+str(decre))
+
+
+        if basc == 0:
+            print("doble multiplicidad")
+        if basc < 0:
+            print("no tiene solucion")
 
 #Corte con el Eje x.
 
