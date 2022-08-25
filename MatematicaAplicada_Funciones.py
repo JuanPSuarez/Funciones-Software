@@ -180,14 +180,19 @@ while OpMenu != 0:
         xV=ejeSim
         yV=vertice
         concPar=""
+        #Coordenadas al vertice.
         coorVer=(xV,yV)
+        #Intervalo de crecimiento y decrecimiento.
         crece=("("+str(xV)+","+ "+∞ "+")")
         decre=("("+ "-∞"+","+ str(xV)+")")
         y=c
 
         if basc > 0:
+            #Corte con el Eje x.
             basc1=(-b+sqrt(((b*b)-(4*a*c))))/(2*a)
+            #Corte con el Eje y.
             basc2=(-b-sqrt(((b*b)-(4*a*c))))/(2*a)
+            #Concavididad de la parabola.
             if a > 0:
                 concPar= "Funcion Concava hacia Arriba"
             if a < 0:
@@ -204,22 +209,19 @@ while OpMenu != 0:
             print("La parabola crece en: " + str(crece))
             print("La parabola decrece en: "+str(decre))
 
-
+        #Doble multiplicidad.
         if basc == 0:
-            print("doble multiplicidad")
+            print("La ecuacion tiene doble multiplicidad")
+            print("Las coordenadas del vertice son = " + str(coorVer))
+            print("El eje de simetria es= " + str(ejeSim))
+
+        #Parabola sin solucion.
         if basc < 0:
-            print("no tiene solucion")
+            print("No tiene solucion")
+            print("Las coordenadas del vertice son = " + str(coorVer))
+            print("El eje de simetria es= " + str(ejeSim))
 
-#Corte con el Eje x.
+#1,0,1 no tiene solucion
+#1,0,0 doble multiplicidad
 
-#Corte con el Eje y.
-
-#Intervalo de crecimiento y decrecimiento.
-
-#Coordenadas al vertice.
-
-#Concavididad de la parabola.
-
-#Parabola sin solucion.
-
-#Doble multiplicidad.
+#Agregar validaciones
