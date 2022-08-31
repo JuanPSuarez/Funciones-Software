@@ -77,6 +77,16 @@ def comportamientoRecta(a):
 
 #Doble multiplicidad.
 
+#Excepciones
+
+def excepcion (a):
+    while not a.isnumeric():
+        a = input("Ha ingresado un caracter incorrecto. Ingrese solamente numeros: ")
+    a = float(a)
+    return a
+
+
+
 
 
 #-----------------------------------------------------------------------------
@@ -102,10 +112,11 @@ while OpMenu != 0:
         
         a = 0
         while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
-            a = int(input("Ingrese el termino de X: "))
-        b = int(input("Ingrese el termino indepndiente: "))
+            a = input("Ingrese el termino de X: ")
+            a = excepcion(a)
+        b = input("Ingrese el termino indepndiente: ")
+        b = excepcion(b)
         print("\n")
-
         print("La ecuacion es: " , a, "x +",b, "\n")
 
 #Paralelas.
@@ -127,8 +138,8 @@ while OpMenu != 0:
             # aFracc = str(Fraction(aPerp))
             print ("Su", contador, "° perpendicular es " , aPerp, "x +", bPerp)
         print("\n")
-        input("Presione una tecla para continuar.")
-
+        input("Presione una tecla para continuar.\n")
+        
 #-----------------------------------------------------------------------------
 #2) Analisis de una recta.
 #-----------------------------------------------------------------------------
@@ -137,10 +148,11 @@ while OpMenu != 0:
     if OpMenu == 2:
         a = 0 #Reusamos codigo de OpMenu == 1
         while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
-            a = float(input("Ingrese el termino de X: "))
-        b = float(input("Ingrese el termino indepndiente: "))
+            a = input("Ingrese el termino de X: ")
+            a = excepcion(a)
+        b = input("Ingrese el termino indepndiente: ")
+        b = excepcion(b)
         print("\n")
-
         print("La ecuacion es: " , a, "x +",b)
 
 
@@ -158,8 +170,7 @@ while OpMenu != 0:
 
         TipoRecta = comportamientoRecta(a)
         print("El comportamiento de la recta es:", TipoRecta, "\n")
-        input("Presione una tecla para continuar.")
-
+        input("Presione una tecla para continuar.\n")
 
 #-----------------------------------------------------------------------------
 #3) Analisis de una parabola.
@@ -167,9 +178,12 @@ while OpMenu != 0:
 
 #Input del usuario.
     if OpMenu == 3:
-        a = float(input("Ingrese coeficiente principal: "))
-        b = float(input("Ingrese termino x: "))
-        c = float(input("Ingrese el termino independiente: "))
+        a = input("Ingrese coeficiente principal: ")
+        a = excepcion(a)
+        b = input("Ingrese termino x: ")
+        b= excepcion(b)
+        c = input("Ingrese el termino independiente: ")
+        c = excepcion(c)
         print("\n")
 
         print("La ecuacion es: " , a, "x² +",b,"x +", c)
@@ -220,8 +234,10 @@ while OpMenu != 0:
             print("No tiene solucion")
             print("Las coordenadas del vertice son = " + str(coorVer))
             print("El eje de simetria es= " + str(ejeSim))
+        input("Presione una tecla para continuar.\n")
 
 #1,0,1 no tiene solucion
 #1,0,0 doble multiplicidad
 
 #Agregar validaciones
+#Agregar float en vez de int
