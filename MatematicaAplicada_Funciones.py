@@ -80,7 +80,7 @@ def comportamientoRecta(a):
 #Excepciones
 
 def excepcion (a):
-    while not a.isnumeric():
+    while not a.isdigit():
         a = input("Ha ingresado un caracter incorrecto. Ingrese solamente numeros: ")
     a = float(a)
     return a
