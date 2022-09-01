@@ -61,32 +61,23 @@ def comportamientoRecta(a):
 
 
 
-#FUNCIONES ANALISIS PARABOLA
-
-#Corte con el Eje x.
-
-#Corte con el Eje y.
-
-#Intervalo de crecimiento y decrecimiento.
-
-#Coordenadas al vertice.
-
-#Concavididad de la parabola.
-
-#Parabola sin solucion.
-
-#Doble multiplicidad.
-
-#Excepciones
 
 # def encontrarPunt(a):
 #     if find(.) in a:
 #         a -> float
 
 def excepcion (a):
-    if not a.isnumeric() and type(a) == float:
+    
+    if a.find(".") >= 1:
+        a=float(a)
+    elif a.isnumeric():        
+        a=float(a)
+    else:
         a = input("Ha ingresado un caracter incorrecto. Ingrese solamente numeros: ")
-    a = float(a)
+        
+    # while not a.isnumeric() and not type(a) == float:
+    #     a = input("Ha ingresado un caracter incorrecto. Ingrese solamente numeros: ")
+    # a = float(a)
     return a
 
 
@@ -206,11 +197,11 @@ while OpMenu != 0:
         y=c
 
         if basc > 0:
-            #Corte con el Eje x.
+#Corte con el Eje x.
             basc1=(-b+sqrt(((b*b)-(4*a*c))))/(2*a)
             #Corte con el Eje y.
             basc2=(-b-sqrt(((b*b)-(4*a*c))))/(2*a)
-            #Concavididad de la parabola.
+#Concavididad de la parabola.
             if a > 0:
                 concPar= "Funcion Concava hacia Arriba"
             if a < 0:
@@ -227,13 +218,13 @@ while OpMenu != 0:
             print("La parabola crece en: " + str(crece))
             print("La parabola decrece en: "+str(decre))
 
-        #Doble multiplicidad.
+#Doble multiplicidad.
         if basc == 0:
             print("La ecuacion tiene doble multiplicidad")
             print("Las coordenadas del vertice son = " + str(coorVer))
             print("El eje de simetria es= " + str(ejeSim))
 
-        #Parabola sin solucion.
+#Parabola sin solucion.
         if basc < 0:
             print("No tiene solucion")
             print("Las coordenadas del vertice son = " + str(coorVer))
