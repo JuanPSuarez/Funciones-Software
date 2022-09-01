@@ -104,13 +104,12 @@ while OpMenu != "0":
 
 #Input del usuario.
     if OpMenu == "1":
-        
         a = 0
         while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
-            a = input("Ingrese el termino de X: ")
-            a = excepcion(a)
-        b = input("Ingrese el termino independiente: ")
-        b = excepcion(b)
+            a = int(input("Ingrese el termino de X: "))
+            # a = excepcion(a)
+        b = int(input("Ingrese el termino independiente: "))
+        # b = excepcion(b)
         print("\n")
         print("La ecuacion es: " , a, "x +",b, "\n")
 
@@ -143,10 +142,10 @@ while OpMenu != "0":
     if OpMenu == "2":
         a = 0 #Reusamos codigo de OpMenu == 1
         while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
-            a = input("Ingrese el termino de X: ")
-            a = excepcion(a)
-        b = input("Ingrese el termino indepndiente: ")
-        b = excepcion(b)
+            a = int(input("Ingrese el termino de X: "))
+            # a = excepcion(a)
+        b = int(input("Ingrese el termino indepndiente: "))
+        # b = excepcion(b)
         print("\n")
         print("La ecuacion es: " , a, "x +",b)
 
@@ -173,12 +172,13 @@ while OpMenu != "0":
 
 #Input del usuario.
     if OpMenu == "3":
-        a = input("Ingrese coeficiente principal: ")
-        a = excepcion(a)
-        b = input("Ingrese termino x: ")
-        b= excepcion(b)
-        c = input("Ingrese el termino independiente: ")
-        c = excepcion(c)
+        a = int(input("Ingrese coeficiente principal: "))
+        # a = excepcion(a)
+        b = int(input("Ingrese termino x: "))
+        # b= excepcion(b)
+        c = int(input("Ingrese el termino independiente: "))
+        
+
         print("\n")
 
         print("La ecuacion es: " , a, "x² +",b,"x +", c)
@@ -189,9 +189,9 @@ while OpMenu != "0":
         xV=ejeSim
         yV=vertice
         concPar=""
-        #Coordenadas al vertice.
+#Coordenadas al vertice.
         coorVer=(xV,yV)
-        #Intervalo de crecimiento y decrecimiento.
+#Intervalo de crecimiento y decrecimiento.
         crece=("("+str(xV)+","+ "+∞ "+")")
         decre=("("+ "-∞"+","+ str(xV)+")")
         y=c
@@ -221,12 +221,14 @@ while OpMenu != "0":
 #Doble multiplicidad.
         if basc == 0:
             print("La ecuacion tiene doble multiplicidad")
+            print("El valor del discriminante: ", basc)
             print("Las coordenadas del vertice son = " + str(coorVer))
             print("El eje de simetria es= " + str(ejeSim))
 
 #Parabola sin solucion.
         if basc < 0:
             print("No tiene solucion")
+            print("El valor del discriminante: ", basc)
             print("Las coordenadas del vertice son = " + str(coorVer))
             print("El eje de simetria es= " + str(ejeSim))
         input("Presione una tecla para continuar.\n")
