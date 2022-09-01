@@ -22,13 +22,13 @@ from math import sqrt
 
 #Funcion para ecuacion lineal, paralela:
 def linealParalela (termI): #El coeficiente principal se mantiene
-    termI = random.randint(-100,100) #Termino independiente aleatorio
+    termI = random.randint(-50,50) #Termino independiente aleatorio
     return  termI
 
 #Funcion para ecuacion lineal, prependicular:
 def lineaPerpendicular(termX, termI):
     termX = -(termX**(-1)) #Inverso y negativo del coeficiente principal
-    termI = random.randint(-100,100) #Termino independiente aleatorio
+    termI = random.randint(-50,50) #Termino independiente aleatorio
     return termX, termI
 
 
@@ -61,28 +61,23 @@ def comportamientoRecta(a):
 
 
 
-#FUNCIONES ANALISIS PARABOLA
 
-#Corte con el Eje x.
-
-#Corte con el Eje y.
-
-#Intervalo de crecimiento y decrecimiento.
-
-#Coordenadas al vertice.
-
-#Concavididad de la parabola.
-
-#Parabola sin solucion.
-
-#Doble multiplicidad.
-
-#Excepciones
+# def encontrarPunt(a):
+#     if find(.) in a:
+#         a -> float
 
 def excepcion (a):
-    while not a.isdigit():
+    # while not a.isdigit():
+    if a.find(".") >= 1:
+        a=float(a)
+    elif a.isnumeric():        
+        a=float(a)
+    else:
         a = input("Ha ingresado un caracter incorrecto. Ingrese solamente numeros: ")
-    a = float(a)
+        
+    # while not a.isnumeric() and not type(a) == float:
+    #     a = input("Ha ingresado un caracter incorrecto. Ingrese solamente numeros: ")
+    # a = float(a)
     return a
 
 
@@ -94,13 +89,13 @@ def excepcion (a):
 #-----------------------------------------------------------------------------
 
 OpMenu = int
-while OpMenu != 0:
-    OpMenu = int(input("""Ingrese una opcion: 
+while OpMenu != "0":
+    OpMenu = input("""Ingrese una opcion: 
     1) Calcular Paralelas y Perpendicualres a una recta dada.
     2) Analisis de una ecuacion lineal.
     3) Analisis de ecuacion cuadratica.
     0) Salir.
-    \n"""))
+    \n""")
     
     
 #-----------------------------------------------------------------------------
@@ -108,13 +103,13 @@ while OpMenu != 0:
 #-----------------------------------------------------------------------------
 
 #Input del usuario.
-    if OpMenu == 1:
+    if OpMenu == "1":
         
         a = 0
         while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
             a = input("Ingrese el termino de X: ")
             a = excepcion(a)
-        b = input("Ingrese el termino indepndiente: ")
+        b = input("Ingrese el termino independiente: ")
         b = excepcion(b)
         print("\n")
         print("La ecuacion es: " , a, "x +",b, "\n")
@@ -145,7 +140,7 @@ while OpMenu != 0:
 #-----------------------------------------------------------------------------
 
 #Input del usuario.
-    if OpMenu == 2:
+    if OpMenu == "2":
         a = 0 #Reusamos codigo de OpMenu == 1
         while a == 0: #Evitamos que a == 0 pidiendole al usuario a =/= 0.
             a = input("Ingrese el termino de X: ")
@@ -177,7 +172,7 @@ while OpMenu != 0:
 #-----------------------------------------------------------------------------
 
 #Input del usuario.
-    if OpMenu == 3:
+    if OpMenu == "3":
         a = input("Ingrese coeficiente principal: ")
         a = excepcion(a)
         b = input("Ingrese termino x: ")
@@ -202,11 +197,11 @@ while OpMenu != 0:
         y=c
 
         if basc > 0:
-            #Corte con el Eje x.
+#Corte con el Eje x.
             basc1=(-b+sqrt(((b*b)-(4*a*c))))/(2*a)
             #Corte con el Eje y.
             basc2=(-b-sqrt(((b*b)-(4*a*c))))/(2*a)
-            #Concavididad de la parabola.
+#Concavididad de la parabola.
             if a > 0:
                 concPar= "Funcion Concava hacia Arriba"
             if a < 0:
@@ -223,13 +218,13 @@ while OpMenu != 0:
             print("La parabola crece en: " + str(crece))
             print("La parabola decrece en: "+str(decre))
 
-        #Doble multiplicidad.
+#Doble multiplicidad.
         if basc == 0:
             print("La ecuacion tiene doble multiplicidad")
             print("Las coordenadas del vertice son = " + str(coorVer))
             print("El eje de simetria es= " + str(ejeSim))
 
-        #Parabola sin solucion.
+#Parabola sin solucion.
         if basc < 0:
             print("No tiene solucion")
             print("Las coordenadas del vertice son = " + str(coorVer))
