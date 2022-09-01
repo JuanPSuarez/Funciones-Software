@@ -79,8 +79,12 @@ def comportamientoRecta(a):
 
 #Excepciones
 
+# def encontrarPunt(a):
+#     if find(.) in a:
+#         a -> float
+
 def excepcion (a):
-    while not a.isnumeric():
+    if not a.isnumeric() and type(a) == float:
         a = input("Ha ingresado un caracter incorrecto. Ingrese solamente numeros: ")
     a = float(a)
     return a
